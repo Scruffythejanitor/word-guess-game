@@ -35,14 +35,16 @@ document.addEventListener('keyup', function () {
     
     guessedLetters.push(event.key)
     console.log(guessedLetters);
-    checkLetterPressed()
+    checkLetterPressed(event.key)
+    updateHtml()
     
         
  });
 
 //starts a new game
- newGame()
-updateHtml()
+newGame()
+
+
 //new game function
 function newGame() {
 
@@ -63,27 +65,30 @@ function newGame() {
         }  
     }
     console.log(wordToGuess);
-    
+    updateHtml()
 }
 // game
-function checkLetterPressed(){
+function checkLetterPressed(letterPressed){
     for (var i = 0; i < pickedMovie.length; i++) {
-        if (guessedLetters === pickedMovie[i]) {
-            foundLetter.push("")
-            
-        } else{
-            wrongLetters.push("")
+        if (letterPressed === pickedMovie[i]) {
+            foundLetter.push(letterPressed)
+            return;
         }
         
     }
-}
+    wrongLetters.push(letterPressed)
+    if (wrongLetters.includes) {
+        
+    }
+        
+    }
+
 
 
 //Publish to Index.html
 function updateHtml() {
-    wrongLetters.push
-    document.getElementById("lettersGuessed").innerText = wrongLetters;
+    document.getElementById("lettersGuessed").innerHTML = wrongLetters;
     document.getElementById('lifeLeft').innerText = guesses;
-    document.getElementById('Wins').innerText = wins;
-    document.getElementById('wordGuess').innerText = wordToGuess;
+    document.getElementById('wins').innerText = wins;
+    document.getElementById('wordGuess').innerHTML = " " + wordToGuess.join(" ");
 }
