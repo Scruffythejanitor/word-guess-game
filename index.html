@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
-    <title>Document</title>
+
+    <title>Word Guess Game</title>
 </head>
 <body>
-    <div class="container-full h-100">
+    <audio id="bad-sound" src="/assets/Sounds/womp-womp.mp3"></audio>
+    <!-- <div id="movie-poster" ><img id="poster"></div> -->
+    <div class="container-full">
         <header>
-            <h1>Iconic Movies</h1>
+            <h1>ICONIC MOVIES</h1>
         </header>
-        <div class="row justify-content-center h-100">
-            <div class="col-md-8">
-                <h2 id="wordGuess">Type A Letter to get started</h2>
-            </div>
-            <div class="col-md-4 score">
-                <h2>score goes here</h2>
-                <p id="lettersGuessed">a</p>
-                <p id="lifeLeft">0</p>
-                <p id="wins"></p>
+        <div class="row justify-content-center h-100 middle">
+            <div class="random-word" id="word-guess"></div>
+            <div class="col-md-12 score">
+                
+                <div>GUESSED LETTERS - <span id="letters-guessed"></span></div>
+                <div>WRONG LETTERS - <span id="wrong-letters"> </span></div>
+                <div>LIVES - <span id="life-left"></span> WINS - <span id="wins"></span> LOSSES - <span id="losses"></span></div>
                 
             </div>
         </div>
         <div class="footer">
-            <p class="footer ">Type A Letter To Get Started</p>
+            <p class="footer ">TYPE A  LETTER TO START</p>
             <div id="buttons"></div>
         </div>
     </div>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
